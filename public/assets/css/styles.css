@@ -1,0 +1,38 @@
+/*
+	font-family: 'Roboto Mono', monospace;
+	font-family: 'Titillium Web', sans-serif;
+	font-family: 'Crimson Text', serif;
+	font-family: 'Inconsolata', monospace;
+	font-family: 'Karla', sans-serif;
+	font-family: 'Abel', sans-serif;
+	font-family: 'IBM Plex Mono', monospace;
+	font-family: 'Amatic SC', cursive;
+*/
+
+/* ESTILOS LOGIN */
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.fa-btn {
+    margin-right: 6px;
+}
+
+/*ARTICULOS INDEX*/
+
+.tab-art tr th{
+	background-color: #3D8AD4;
+	color: white;
+	letter-spacing: 1px;
+}
+  
+.nowrap{
+	white-space:nowrap  !important; 
+}
+
+#tab-articulos tr:hover, #tab-proveedores tr:hover {
+	background-color: #F1F1F1;
+	cursor: pointer;
+	font-weight: bold;
+}
