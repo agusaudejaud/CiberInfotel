@@ -87,7 +87,7 @@ class ProveedorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $proveedor = Proveedor::find($id);
+        $proveedor = Proveedor::find($id);   
     $proveedor->fill($request->all());
     $proveedor->save();
     return redirect()->route('proveedores.index'); 

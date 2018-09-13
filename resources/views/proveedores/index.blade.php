@@ -13,16 +13,17 @@
   
 </div>
 <br>
-<div class="container">
-  <table class="table table-bordered table-condensed tab-articles">
+
+<div class="col-lg-10 col-md-10 col-sm-12 col-lg-offset-1 col-md-offset-1">
+  <table class="table table-bordered table-condensed tab-art" id="tab-articulos">
     <thead>
       <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Rubro</th>
-        <th>Telefono</th>
-        <th>E-mail</th>
-        <th>Cuit</th>
+        <th class="nowrap text-center" >Nombre</th>
+        <th class="nowrap text-center" >Apellido</th>
+        <th class="nowrap text-center">Rubro</th>
+        <th class="nowrap text-center">Telefono</th>
+        <th class="nowrap text-center">E-mail</th>
+        <th class="nowrap text-center">Cuit</th>
         
 
       </tr>
@@ -55,7 +56,8 @@
      
     </tbody>
   </table>
-</div>
+  </div>
+
 
 
          
