@@ -23,6 +23,7 @@
         <th>Telefono</th>
         <th>E-mail</th>
         <th>Cuit</th>
+        
 
       </tr>
     </thead>
@@ -36,25 +37,17 @@
           <td class="text-center">{{$proveedor->telefono}}</td>
            <td class="text-center">{{$proveedor->email}}</td>
             <td class="text-center">{{$proveedor->cuit}}</td>
-         
+            
           <td>
- 
                {!! Form::open(['method' => 'DELETE', 
                   'route' => ['proveedores.destroy', $proveedor->id]]) !!}
-                  <button type="submit" class="btn btn-sm btn-danger" >Eliminar</button>
-        
+                  <button type="submit" class="btn btn-sm btn-danger col-sm pull-left"  >Eliminar</button>
+                {!! Form::close() !!}      
 
-                {!! Form::close() !!}
-              
-
-          
+                 <a href="{{route('proveedores.edit', $proveedor->id)}}" > <button type="submit" class="btn btn-sm btn-info col-sm pull-left"  >Editar</button></a>
+                
           </td>
-            <td>
-           
-           
-  
-    <a href="{{route('proveedores.edit', $proveedor->id)}}" ><span class="glyphicon glyphicon-edit"></span></a>
-
+            
          
         </tr>
 
@@ -67,10 +60,5 @@
 
          
 
-  <script>
-    $('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
 
-    </script>
 @endsection
