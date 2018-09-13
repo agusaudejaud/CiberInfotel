@@ -17,28 +17,28 @@
 </div>
 
 <div class="form-group col-lg-6 col-md-6 col-sm-12">
-  <label for="marca"><b>Apellido Proveedor</b></label>
+  <label for="apellido"><b>Apellido Proveedor</b></label>
   <input type="text" class="form-control input-sm" name="apellido" placeholder="Apellido" tabindex="2" value="{{$proveedor->apellido}}">
 </div>
 
 <div class="form-group col-lg-6 col-md-6 col-sm-12">
-  <label for="marca"><b>Rubro</b></label>
-  <input type="text" class="form-control input-sm" name="rubro" placeholder="Rubro" tabindex="2" value="{{$proveedor->rubro}}">
+  <label for="rubro"><b>Rubro</b></label>
+  <input type="text" class="form-control input-sm" name="rubro" placeholder="Rubro" tabindex="3" value="{{$proveedor->rubro}}">
 </div>
 
 <div class="form-group col-lg-6 col-md-6 col-sm-12">
-  <label for="precio_venta"><b>Telefono</b></label>
+  <label for="telefono"><b>Telefono</b></label>
   <input type="text" class="form-control input-sm" name="telefono" placeholder="Telefono" tabindex="4" value="{{$proveedor->telefono}}">
 </div>
 
 <div class="form-group col-lg-6 col-md-6 col-sm-12">
   <label for="codigo_barras"><b>E-mail</b></label>
-  <input type="text" class="form-control input-sm" name="email" placeholder="E-mail" value="{{$proveedor->email}}">
+  <input type="text" class="form-control input-sm" name="email" placeholder="E-mail" tabindex="5"  value="{{$proveedor->email}}">
 </div>
 
  <div class="form-group col-lg-6 col-md-6 col-sm-12">
-  <label for="codigo_barras"><b>Cuit</b></label>
-  <input type="text" class="form-control input-sm" name="cuit" placeholder="Cuit" value="{{$proveedor->cuit}}">
+  <label for="cuit"><b>Cuit</b></label>
+  <input type="text" class="form-control input-sm" name="cuit" placeholder="Cuit" tabindex="6"  value="{{$proveedor->cuit}}">
 </div>
 
         <button type="submit" class="btn btn-sm btn-info" >editar</button>

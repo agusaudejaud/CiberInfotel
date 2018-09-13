@@ -16,28 +16,28 @@
     </div>
 
     <div class="form-group col-lg-6 col-md-6 col-sm-12">
-      <label for="marca"><b>Apellido Proveedor</b></label>
+      <label for="apellido"><b>Apellido Proveedor</b></label>
       <input type="text" class="form-control input-sm" name="apellido" placeholder="Apellido" tabindex="2">
     </div>
 
     <div class="form-group col-lg-6 col-md-6 col-sm-12">
-      <label for="marca"><b>Rubro</b></label>
-      <input type="text" class="form-control input-sm" name="rubro" placeholder="Rubro" tabindex="2">
+      <label for="rubro"><b>Rubro</b></label>
+      <input type="text" class="form-control input-sm" name="rubro" placeholder="Rubro" tabindex="3">
     </div>
 
     <div class="form-group col-lg-6 col-md-6 col-sm-12">
-      <label for="precio_venta"><b>Telefono</b></label>
+      <label for="telefono"><b>Telefono</b></label>
       <input type="text" class="form-control input-sm" name="telefono" placeholder="Telefono" tabindex="4">
     </div>
 
     <div class="form-group col-lg-6 col-md-6 col-sm-12">
-      <label for="codigo_barras"><b>E-mail</b></label>
-      <input type="text" class="form-control input-sm" name="email" placeholder="E-mail">
+      <label for="email"><b>E-mail</b></label>
+      <input type="text" class="form-control input-sm" name="email" placeholder="E-mail" tabindex="5" >
     </div>
 
      <div class="form-group col-lg-6 col-md-6 col-sm-12">
-      <label for="codigo_barras"><b>Cuit</b></label>
-      <input type="text" class="form-control input-sm" name="cuit" placeholder="Cuit">
+      <label for="cuit"><b>Cuit</b></label>
+      <input type="text" class="form-control input-sm" name="cuit" placeholder="Cuit" tabindex="6" >
     </div>
 
     <div class="row text-center">
