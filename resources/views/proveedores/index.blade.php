@@ -4,7 +4,7 @@
 @section('title', 'Proveedor')
 
 @section('content')
-
+<script type="text/javascript" src="{{ URL::asset('assets/js/funciones_proveedores.js') }}"></script>
 <div class="container">
   <div class="col-lg-4 col-md-4 col-sm-4 text-center">
     <a href="proveedores/create" class="btn btn-sm btn-success">NUEVO PROVEEDOR</a>
@@ -14,8 +14,10 @@
 </div>
 <br>
 
+
+
 <div class="col-lg-10 col-md-10 col-sm-12 col-lg-offset-1 col-md-offset-1">
-  <table class="table table-bordered table-condensed tab-art" id="tab-articulos">
+  <table class="table table-bordered table-condensed tab-art" id="proveedores">
     <thead>
       <tr>
         <th class="nowrap text-center" >Nombre</th>
@@ -24,10 +26,14 @@
         <th class="nowrap text-center">Telefono</th>
         <th class="nowrap text-center">E-mail</th>
         <th class="nowrap text-center">Cuit</th>
-        
+        <th class="nowrap text-center">Acciones</th>
+
+
 
       </tr>
+    
     </thead>
+  
     <tbody>
  
      @foreach ($proveedores as $proveedor)

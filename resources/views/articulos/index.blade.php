@@ -33,6 +33,7 @@
                 <th class="nowrap text-center">Disponibilidad</th>
                 <th class="nowrap text-center">Precio Venta</th>
                 <th class="nowrap text-center"></th>
+                
             </tr>
         </thead>
         <tbody>
