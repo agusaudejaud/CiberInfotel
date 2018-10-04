@@ -32,28 +32,33 @@
                 <th class="nowrap text-left">Marca</th>
                 <th class="nowrap text-center">Disponibilidad</th>
                 <th class="nowrap text-center">Precio Venta</th>
-                <th class="nowrap text-center"></th>
+                <th class="nowrap text-center">Descripcion</th>
+                <th class="nowrap text-center">Acciones</th>
                 
             </tr>
         </thead>
         <tbody>
-            @foreach ($articulos as $articulos)
+            @foreach ($articulos as $articulo)
             <tr>
-                <td class="text-left">{{$articulos->nombre}}</td>
-                @if(isset($articulos->marca)) 
-                    <td class="text-left">{{$articulos->marca}}</td>
-                @else
-                    <td class="text-left">S/C</td>
-                @endif
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center">
-                    <span class="glyphicon glyphicon-edit" style="cursor: pointer;" title="Editar Articulo"></span>
-                    <a href="">
-                        <span class="glyphicon glyphicon-trash" style="cursor:pointer;" title="Eliminar Articulo"></span>
-                    </a>
-                </td>
+            <td>
+            {{$articulo->nombre}}
+            </td>
+            <td>
+            {{$articulo->nombreMarca->nombre}}
+            </td>
+            <td>
+            {{$articulo->disponibilidad}}
+            </td>
+            <td>
+            {{$articulo->precio_venta}}
+            </td>
+            <td>
+            {{$articulo->descripcion}}
+            </td>
+            
             </tr>
+            
+           
             @endforeach
         </tbody>
     </table>

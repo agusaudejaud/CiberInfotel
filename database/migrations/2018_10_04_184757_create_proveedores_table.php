@@ -13,13 +13,13 @@ class CreateProveedoresTable extends Migration
     public function up()
     {
         Schema::create('proveedores', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nombre')->nullable();
-            $table->string('apellido')->nullable();
-            $table->string('rubro')->nullable();
-            $table->string('telefono')->nullable();
-            $table->string('email')->nullable();
-            $table->string('cuit')->nullable();
+            $table->increments('id')->unique();
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->string('rubro');
+            $table->string('telefono');
+            $table->string('email');
+            $table->string('cuit');
             $table->timestamps();
         });
     }

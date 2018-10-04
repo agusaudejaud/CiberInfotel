@@ -38,3 +38,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/proveedores', 'ProveedorController');
 
 });
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

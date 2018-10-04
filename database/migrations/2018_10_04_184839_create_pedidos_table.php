@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -14,11 +13,11 @@ class CreatePedidosTable extends Migration
     public function up()
     {
         Schema::create('pedidos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('numeroorden')->nullable();
-            $table->integer('proveedor')->nullable();
-            //$table->foreign('id')->references('id')->on('detalle_pedidos');
-            $table->date('fecha')->nullable();
+            $table->increments('id')->unsigned();
+            $table->string('numeroorden');
+            $table->integer('proveedor')->unsigned();
+           $table->foreign('proveedor')->references('id')->on('proveedores');
+            $table->date('fecha');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreatePedidosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pedidos');
+         Schema::dropIfExists('pedidos');
     }
 }

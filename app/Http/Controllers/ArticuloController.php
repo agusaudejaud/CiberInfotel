@@ -18,9 +18,9 @@ class ArticuloController extends Controller
     public function index()
     {
         $articulos = Articulo::all();
-
+        
         return view('articulos.index', compact('articulos'));
-
+        
     }
 
     /**
