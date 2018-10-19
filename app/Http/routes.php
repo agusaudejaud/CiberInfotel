@@ -36,6 +36,8 @@ Route::get('/home', 'HomeController@index');
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('/articulos', 'ArticuloController');
     Route::resource('/proveedores', 'ProveedorController');
+    Route::post('/marcasArt', 'ArticuloController@storeMarca');
+    Route::resource('/pedidos', 'PedidoController');
 
 });
 Route::auth();

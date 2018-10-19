@@ -28,7 +28,7 @@
     <table class="table table-bordered table-condensed tab-art" id="tab-articulos">
         <thead>
             <tr>
-                <th class="nowrap text-left">Nombre</th>
+                <th class="nowrap text-left">Nombre Articulo</th>
                 <th class="nowrap text-left">Marca</th>
                 <th class="nowrap text-center">Disponibilidad</th>
                 <th class="nowrap text-center">Precio Venta</th>
@@ -40,22 +40,30 @@
         <tbody>
             @foreach ($articulos as $articulo)
             <tr>
-            <td>
+            <td class="text-center">
             {{$articulo->nombre}}
-            </td>
-            <td>
+            </td >
+            <td class="text-center">
             {{$articulo->nombreMarca->nombre}}
             </td>
-            <td>
+            <td class="text-center">
             {{$articulo->disponibilidad}}
             </td>
-            <td>
+            <td class="text-center">
             {{$articulo->precio_venta}}
             </td>
-            <td>
+            <td class="text-center">
             {{$articulo->descripcion}}
             </td>
-            
+            <td>
+               {!! Form::open(['method' => 'DELETE', 
+                  'route' => ['articulos.destroy', $articulo->id]]) !!}
+                  <button type="submit" class="btn btn-sm btn-danger col-sm pull-left"  >Eliminar</button>
+                {!! Form::close() !!}      
+
+                  <a href="{{route('articulos.edit', $articulo->id)}}" > <button type="submit" class="btn btn-sm btn-info col-sm pull-left"  >Editar</button></a>
+                
+          </td>
             </tr>
             
            

@@ -55,6 +55,7 @@
                     <li><a href="{{ url('/home') }}">Inicio</a></li>
                     <li><a href="{{ url('/articulos') }}">Articulos</a></li>
                     <li><a href="{{ url('/proveedores') }}">Proveedores</a></li>
+                    <li><a href="{{ url('/pedidos') }}">Pedidos</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

@@ -20,8 +20,8 @@
   <table class="table table-bordered table-condensed tab-art" id="proveedores">
     <thead>
       <tr>
-        <th class="nowrap text-center" >Nombre</th>
-        <th class="nowrap text-center" >Apellido</th>
+        <th class="nowrap text-center" >Nombre Proveedor</th>
+        <th class="nowrap text-center" >Apellido Proveedor</th>
         <th class="nowrap text-center">Rubro</th>
         <th class="nowrap text-center">Telefono</th>
         <th class="nowrap text-center">E-mail</th>

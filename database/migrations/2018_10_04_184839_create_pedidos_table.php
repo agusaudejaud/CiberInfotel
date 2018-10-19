@@ -14,7 +14,7 @@ class CreatePedidosTable extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->string('numeroorden');
+            $table->integer('numeroorden');
             $table->integer('proveedor')->unsigned();
            $table->foreign('proveedor')->references('id')->on('proveedores');
             $table->date('fecha');

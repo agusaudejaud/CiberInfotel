@@ -30,7 +30,7 @@ class ArticuloController extends Controller
      */
     public function create()
     {
-        $marcas = Marca::all();
+        $marcas = Marca::orderBy('nombre','ASC')->get();
         return view('articulos.create', compact('marcas'));
     }
 
@@ -54,6 +54,15 @@ class ArticuloController extends Controller
 
         return redirect()->route('articulos.create');
     }
+    
+    public function storeMarca(Request $requestMar){
+        
+   //si existe la marca no agregar
+        $marcas = new Marca();
+        $marcas->nombre= $requestMar->input('nombre');
+        $marcas->save();
+        return redirect()->route('articulos.create');
+    }
 
     /**
      * Display the specified resource.
@@ -74,7 +83,9 @@ class ArticuloController extends Controller
      */
     public function edit($id)
     {
-        //
+        $articulo= Articulo::find($id);
+        $marcas= Marca::all();
+        return view('articulos.edit', compact('articulo'), compact('marcas'));
     }
 
     /**
@@ -86,7 +97,11 @@ class ArticuloController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $articulo = Articulo::find($id);   
+       
+           $articulo->fill($request->all());
+           $articulo->save();
+           return redirect()->route('articulos.index'); 
     }
 
     /**
@@ -97,6 +112,8 @@ class ArticuloController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $articulo = Articulo::find($id);  
+        $articulo->delete();
+        return redirect()->route('articulos.index');
     }
 }
