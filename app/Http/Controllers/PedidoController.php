@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Pedido;
+use App\Proveedor;
 class PedidoController extends Controller
 {
     /**
@@ -15,9 +16,9 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedidos = Pedido::get();
+        $pedidos = Pedido::all();
 
-        return view('/pedidos.index', compact('pedidos'));
+        return view('pedidos.index', compact('pedidos'));
     }
 
     /**
@@ -37,7 +38,12 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pedido = new Pedido();
+        $pedido->numeroorden= $request->input('numeroorden');
+        $pedido->fecha= $request->input('fecha');
+        $pedido->save();
+
+        return redirect()->route('pedidos.index');
     }
 
     /**
@@ -59,7 +65,9 @@ class PedidoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ped= Pedido::find($id);
+        
+        return view('pedidos.edit', compact('ped'));
     }
 
     /**
@@ -71,7 +79,11 @@ class PedidoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ped = Pedido::find($id);   
+       
+        $ped->fill($request->all());
+        $ped->save();
+        return redirect()->route('pedidos.index'); 
     }
 
     /**
@@ -82,6 +94,8 @@ class PedidoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pedidos = Pedido::find($id);  
+        $pedidos->delete();
+        return redirect()->route('pedidos.index');
     }
 }

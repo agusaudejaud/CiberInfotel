@@ -16,7 +16,7 @@ class CreatePedidosTable extends Migration
             $table->increments('id')->unsigned();
             $table->integer('numeroorden');
             $table->integer('proveedor')->unsigned();
-           $table->foreign('proveedor')->references('id')->on('proveedores');
+            $table->foreign('proveedor')->references('id')->on('proveedores');
             $table->date('fecha');
             $table->timestamps();
         });

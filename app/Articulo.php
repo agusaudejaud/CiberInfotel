@@ -13,6 +13,6 @@ class Articulo extends Model
         return $this->belongsTo(Marca::class,'marca');
     }
     
-
+    
     
 }
