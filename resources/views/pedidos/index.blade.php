@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 
-@section('title', 'Pedido')
+@section('title', 'Pedidos')
 
 @section('content')
 
@@ -43,6 +43,7 @@
                 {!! Form::close() !!}      
 
                   <a href="{{route('pedidos.edit', $ped->id)}}" > <button type="submit" class="btn btn-sm btn-info col-sm pull-left"  >Editar</button></a>
+                 
           
           </th>
        

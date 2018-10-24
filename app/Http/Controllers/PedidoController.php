@@ -28,6 +28,8 @@ class PedidoController extends Controller
      */
     public function create()
     {
+        $proveedores = Proveedor::orderBy('nombre','ASC')->get();
+        return view('pedidos.create', compact('proveedores'));
             }
 
     /**
@@ -38,8 +40,10 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
+        
         $pedido = new Pedido();
         $pedido->numeroorden= $request->input('numeroorden');
+        $pedido->proveedor= $request->input('proveedor');
         $pedido->fecha= $request->input('fecha');
         $pedido->save();
 

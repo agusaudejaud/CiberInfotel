@@ -40,7 +40,7 @@
                         <option value="{{$marca->id}}">{{$marca->nombre}}</option>
                         @endforeach
 					</select>
-
+                   
 					<div class="input-group-btn">	
 						<a class="btn btn-default btn-sm" title="Agregar Marcas" data-toggle="modal" data-target="#exampleModal">
 						<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>

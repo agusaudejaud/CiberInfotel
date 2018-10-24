@@ -40,6 +40,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/pedidos', 'PedidoController');
 
 });
+
+
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
