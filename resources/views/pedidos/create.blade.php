@@ -32,7 +32,12 @@
         </div>
         
         <br>
-        
+        <div class="container-fluid">
+          
+          <div class="col-lg-6 col-md-6 text-left">
+              <input type="submit" class="btn btn-success btn-sm" value="CARGAR" tabindex="5">
+          </div>
+      </div>
         </div>
     </form>   
 </div>

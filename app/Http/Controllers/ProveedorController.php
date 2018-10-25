@@ -51,7 +51,8 @@ class ProveedorController extends Controller
         // $proveedor->codigo_barras= $request->input('codigo_barras');
         $proveedor->save();
 
-        return redirect()->route('proveedores.create');    }
+        return redirect()->route('proveedores.create');  
+      }
 
     /**
      * Display the specified resource.

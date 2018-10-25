@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/proveedores', 'ProveedorController');
     Route::post('/marcasArt', 'ArticuloController@storeMarca');
     Route::resource('/pedidos', 'PedidoController');
+    Route::resource('/detallesped', 'DetallepedController');
 
 });
 

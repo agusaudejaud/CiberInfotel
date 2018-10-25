@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Detalleped;
+use App\Articulo;
 use App\Pedido;
-use App\Proveedor;
-class PedidoController extends Controller
+
+class DetallepedController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +18,8 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedidos = Pedido::all();
-
-        return view('pedidos.index', compact('pedidos'));
+        
+        return view('detallesped.index');
     }
 
     /**
@@ -28,9 +29,8 @@ class PedidoController extends Controller
      */
     public function create()
     {
-        $proveedores = Proveedor::orderBy('nombre','ASC')->get();
-        return view('pedidos.create', compact('proveedores'));
-            }
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -40,14 +40,14 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $pedido = new Pedido();
-        $pedido->numeroorden= $request->input('numeroorden');
-        $pedido->proveedor= $request->input('proveedor');
-        $pedido->fecha= $request->input('fecha');
-        $pedido->save();
+        $detalleped = new Detalleped();
+        $detalleped->pedido= $request->input('pedido');
+        $detalleped->cantidad= $request->input('cantidad');
+        $detalleped->precio_costo= $request->input('precio_costo');
+        $detalleped->articulo= $request->input('articulo');
+        $detalleped->save();
 
-        return redirect()->route('pedidos.index');
+        return redirect()->route('pedidos.index');  
     }
 
     /**
@@ -58,7 +58,10 @@ class PedidoController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $articulos= Articulo::all();
+       $pedido_id=$id;
+        return view('detallesped.create',compact('articulos', 'pedido_id'));
     }
 
     /**
@@ -69,9 +72,7 @@ class PedidoController extends Controller
      */
     public function edit($id)
     {
-        $ped= Pedido::find($id);
-        $proveedores = Proveedor::orderBy('nombre','ASC')->get();
-        return view('pedidos.edit', compact('ped'),compact('proveedores'));
+        //
     }
 
     /**
@@ -83,11 +84,7 @@ class PedidoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ped = Pedido::find($id);   
-       
-        $ped->fill($request->all());
-        $ped->save();
-        return redirect()->route('pedidos.index'); 
+        //
     }
 
     /**
@@ -98,8 +95,6 @@ class PedidoController extends Controller
      */
     public function destroy($id)
     {
-        $pedidos = Pedido::find($id);  
-        $pedidos->delete();
-        return redirect()->route('pedidos.index');
+        //
     }
 }

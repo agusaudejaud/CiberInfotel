@@ -18,8 +18,8 @@
         <th class="nowrap text-center" >Numero de Orden</th>
         <th class="nowrap text-center">Proveedor</th>
         <th class="nowrap text-center">Fecha</th>
-        <th class="nowrap text-center">Acciones</th>
-   
+        <th class="nowrap text-center">Pedido</th>
+        <th class="nowrap text-center">Detalles Pedidos</th>
 
 
       </tr>
@@ -43,10 +43,16 @@
                 {!! Form::close() !!}      
 
                   <a href="{{route('pedidos.edit', $ped->id)}}" > <button type="submit" class="btn btn-sm btn-info col-sm pull-left"  >Editar</button></a>
+                  
                  
+                 
+                  <td class="text-center"> 
+          <a href="{{route('detallesped.show', $ped->id)}}" > <button type="submit" class="btn btn-sm btn-info col-sm pull-left" >Agregar</button></a>
+          <a href="{{route('detallesped.edit', $ped->id)}}" > <button type="submit" class="btn btn-sm btn-info col-sm pull-left" >Editar</button></a>
           
+          </td>
           </th>
-       
+        
         </tr>
 
       @endforeach
