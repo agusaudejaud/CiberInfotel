@@ -47,9 +47,9 @@
                  
                  
                   <td class="text-center"> 
-          <a href="{{route('detallesped.show', $ped->id)}}" > <button type="submit" class="btn btn-sm btn-info col-sm pull-left" >Agregar</button></a>
-          <a href="{{route('detallesped.edit', $ped->id)}}" > <button type="submit" class="btn btn-sm btn-info col-sm pull-left" >Editar</button></a>
-          
+
+          <a href="{{route('detallesped.show', $ped->id)}}" > <button type="submit" class="btn btn-sm btn-info col-sm pull-left" >detalles</button></a>
+         
           </td>
           </th>
         

@@ -44,10 +44,10 @@
             {{$articulo->nombre}}
             </td >
             <td class="text-center">
-            {{$articulo->nombreMarca->nombre}}
+            {{$articulo->nombreMarca}}
             </td>
             <td class="text-center">
-            {{$articulo->disponibilidad}}
+            {{$articulo->Stock}}
             </td>
             <td class="text-center">
             {{$articulo->precio_venta}}

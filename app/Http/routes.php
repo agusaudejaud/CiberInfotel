@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/marcasArt', 'ArticuloController@storeMarca');
     Route::resource('/pedidos', 'PedidoController');
     Route::resource('/detallesped', 'DetallepedController');
+    Route::get('detallesped/crearPedido/{id}', 'DetallepedController@crearPedido')->name('detallesped.crearPedido');
 
 });
 

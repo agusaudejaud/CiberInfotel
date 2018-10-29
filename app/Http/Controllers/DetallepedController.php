@@ -19,7 +19,7 @@ class DetallepedController extends Controller
     public function index()
     {
         
-        return view('detallesped.index');
+       
     }
 
     /**
@@ -29,9 +29,13 @@ class DetallepedController extends Controller
      */
     public function create()
     {
-        //
+       
     }
-
+    public function crearPedido($id){
+        $pedido_id=$id;
+        $articulos= Articulo::all();
+        return view('detallesped.create',compact('articulos','pedido_id'));
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -47,7 +51,7 @@ class DetallepedController extends Controller
         $detalleped->articulo= $request->input('articulo');
         $detalleped->save();
 
-        return redirect()->route('pedidos.index');  
+        return redirect()->route('detallesped.show', $request->pedido); 
     }
 
     /**
@@ -58,10 +62,9 @@ class DetallepedController extends Controller
      */
     public function show($id)
     {
-        
-        $articulos= Articulo::all();
-       $pedido_id=$id;
-        return view('detallesped.create',compact('articulos', 'pedido_id'));
+        $pedido_id=$id;
+        $detallesped= Detalleped::Where('pedido',$id)->get();
+        return view('detallesped.index',compact('detallesped','pedido_id'));
     }
 
     /**
@@ -72,7 +75,10 @@ class DetallepedController extends Controller
      */
     public function edit($id)
     {
-        //
+       
+        $detallesped= Detalleped::find($id);
+        $articulos=Articulo::all();
+        return view('detallesped.edit',compact('detallesped','articulos'));
     }
 
     /**
@@ -84,7 +90,11 @@ class DetallepedController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $detallesped = Detalleped::find($id);   
+
+        $detallesped->fill($request->all());
+        $detallesped->save();
+        return redirect()->route('detallesped.show', $request->pedido);
     }
 
     /**
@@ -95,6 +105,9 @@ class DetallepedController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $detallesped = Detalleped::find($id);  
+        $pedido=$detallesped->pedido;
+        $detallesped->delete();
+        return redirect()->route('detallesped.show', $pedido);
     }
 }

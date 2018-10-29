@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Articulo;
 use App\Marca;
@@ -17,8 +17,16 @@ class ArticuloController extends Controller
      */
     public function index()
     {
-        $articulos = Articulo::all();
         
+        $articulos = DB::select('SELECT 
+        articles.*,
+        IFNULL((SELECT 
+            SUM(detallepedidos.cantidad) 
+         FROM detallepedidos 
+         WHERE detallepedidos.articulo=articles.id),0) AS Stock,
+         marcas.nombre AS nombreMarca
+      FROM articles 
+      INNER JOIN marcas ON marcas.id = articles.marca');
         return view('articulos.index', compact('articulos'));
         
     }
