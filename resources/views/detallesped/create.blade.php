@@ -2,6 +2,14 @@
 @section('title', 'Detalle del pedido')
 @section('content')
 
+<div class="container">
+
+<div class="col-lg-4 col-md-4 col-sm-4">
+    <a href="" class="btn btn-primary btn-block">LISTADO</a>
+<br>
+</div>
+
+</div>
 
 
 <div class="col-lg-10 col-md-10 col-sm-12 col-lg-offset-1 col-md-offset-1">
@@ -31,13 +39,9 @@
 					</select>
                     </div>
                     <br>
-        <div class="container-fluid">
-          
-            <div class="col-lg-6 col-md-6 text-left">
-                <input type="submit" class="btn btn-success btn-sm" value="CARGAR" tabindex="5">
-            </div>
-        </div>
-         
+                    <div class="row text-center">
+      <input type="submit" value="CARGAR" class="btn btn-success btn-sm">
+    </div>
     </form>   
 </div>
 

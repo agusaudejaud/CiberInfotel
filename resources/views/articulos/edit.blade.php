@@ -2,7 +2,13 @@
 @section('title', 'Editar Articulo')
 @section('content')
 
-
+<div class="container">
+<div class="col-lg-4 col-md-4 col-sm-4">
+        <a href="{{route('articulos.index')}}" class="btn btn-primary btn-block">LISTADO</a>
+    <br>
+    </div>
+    </div>
+    
 <div class="col-lg-10 col-md-10 col-sm-12 col-lg-offset-1 col-md-offset-1">
     <form action="{{route('articulos.update', $articulo->id)}}" method="post">
         

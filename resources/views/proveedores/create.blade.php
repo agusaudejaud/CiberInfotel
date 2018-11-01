@@ -3,13 +3,22 @@
 @section('title', 'Crear Proveedor')
 
 @section('content')
+<div class="container">
 
+<div class="col-lg-4 col-md-4 col-sm-4">
+    <a href="{{route('proveedores.index')}}" class="btn btn-primary btn-block">LISTADO</a>
+<br>
+</div>
+
+</div>
+
+<br>
 <div class="container">
 
   <form class="form-group" action="{{action('ProveedorController@store')}}" method="post">
 
     <input type="hidden" name="_token" value="{{csrf_token()}}">
-
+    <div class="container-fluid">
     <div class="form-group col-lg-6 col-md-6 col-sm-12">
       <label for="nombre"><b>Nombre Proveedor</b></label>
       <input type="text" class="form-control input-sm" name="nombre" placeholder="Indicar Nombre" tabindex="1">

@@ -4,7 +4,12 @@
 @section('title', 'Editar Proveedor')
 
 @section('content')
-
+<div class="container">
+<div class="col-lg-4 col-md-4 col-sm-4">
+        <a href="{{route('proveedores.index')}}" class="btn btn-primary btn-block">LISTADO</a>
+    <br>
+    </div>
+    </div>
 <div class="container">
 <form class="form-group" action="{{route('proveedores.update', $proveedor->id)}}" method="post">
 
@@ -41,7 +46,14 @@
   <input type="text" class="form-control input-sm" name="cuit" placeholder="Cuit" tabindex="6"  value="{{$proveedor->cuit}}">
 </div>
 
-        <button type="submit" class="btn btn-sm btn-info" >editar</button>
+     <br>
+
+        <div class="container-fluid">
+        
+            <div class="col-lg-12 col-md-12 text-center">
+                <input type="submit" class="btn btn-success btn-sm" value="CARGAR" tabindex="5">
+            </div>
+        </div>
 </form>
 </div>
 @endsection

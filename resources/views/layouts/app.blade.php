@@ -45,13 +45,13 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Gesti&oacute;n
+                   Ciber Infotel
                 </a>
             </div>
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <div class="collapse navbar-collapse " id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav ">
                     <li><a href="{{ url('/home') }}">Inicio</a></li>
                     <li><a href="{{ url('/articulos') }}">Articulos</a></li>
                     <li><a href="{{ url('/proveedores') }}">Proveedores</a></li>

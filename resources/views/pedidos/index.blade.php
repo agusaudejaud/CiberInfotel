@@ -5,13 +5,24 @@
 
 @section('content')
 
-
-<div class="col-lg-4 col-md-4 col-sm-4">
+<script type="text/javascript" src="{{ URL::asset('assets/js/funciones_proveedores.js') }}"></script>
+<div class="container">
+   
+    
+   
+    <div class="col-lg-4 col-md-4 col-sm-4">
         <a href="pedidos/create" class="btn btn-success btn-block">CARGAR</a>
         <br>
     </div>
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        <a href="pedidos/reporte" class="btn btn-warning btn-block" disabled>REPORTES</a>
+        <br>
+    </div>
+</div>
+
+<br>
 <div class="col-lg-10 col-md-10 col-sm-12 col-lg-offset-1 col-md-offset-1">
-  <table class="table table-bordered table-condensed tab-art" id="pedidos">
+  <table class="table table-bordered table-condensed tab-art" id="proveedores">
     <thead>
       <tr>
         <th class="nowrap text-center" >Id</th>
@@ -19,7 +30,7 @@
         <th class="nowrap text-center">Proveedor</th>
         <th class="nowrap text-center">Fecha</th>
         <th class="nowrap text-center">Pedido</th>
-        <th class="nowrap text-center">Detalles Pedidos</th>
+ 
 
 
       </tr>
@@ -46,9 +57,9 @@
                   
                  
                  
-                  <td class="text-center"> 
+                  
 
-          <a href="{{route('detallesped.show', $ped->id)}}" > <button type="submit" class="btn btn-sm btn-info col-sm pull-left" >detalles</button></a>
+          <a href="{{route('detallesped.show', $ped->id)}}" > <button type="submit" class="btn btn-sm btn-danger col-sm pull-left" >detalles</button></a>
          
           </td>
           </th>

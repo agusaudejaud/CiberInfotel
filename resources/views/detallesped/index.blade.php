@@ -5,14 +5,26 @@
 
 @section('content')
 
+<script type="text/javascript" src="{{ URL::asset('assets/js/funciones_proveedores.js') }}"></script>
 
-<div class="col-lg-4 col-md-4 col-sm-4">
+    <div class="container">
+
+    
+    
+    <div class="col-lg-4 col-md-4 col-sm-4">
         <a href="{{route('detallesped.crearPedido', $pedido_id)}}" class="btn btn-success btn-block">CARGAR</a>
         <br>
     </div>
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        <a href="proveedores/reporte" class="btn btn-warning btn-block" disabled>REPORTES</a>
+        <br>
+    </div>
+</div>
+
+<br>
 
 <div class="col-lg-10 col-md-10 col-sm-12 col-lg-offset-1 col-md-offset-1">
-  <table class="table table-bordered table-condensed tab-art" id="pedidos">
+  <table class="table table-bordered table-condensed tab-art" id="proveedores">
     <thead>
       <tr>
         <th class="nowrap text-center" >Id</th>

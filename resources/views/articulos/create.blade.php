@@ -2,22 +2,14 @@
 @section('title', 'Crear Articulo')
 @section('content')
 
-<script type="text/javascript" src="{{ URL::asset('assets/js/funciones_articulos.js') }}"></script>
 
 <div class="container">
-    <p class="title-form text-center">[ LISTADO DE ARTICULOS ]</p>
+
     <div class="col-lg-4 col-md-4 col-sm-4">
-        <a href="/articulos" class="btn btn-primary btn-block">LISTADO</a>
+        <a href="{{route('articulos.index')}}" class="btn btn-primary btn-block">LISTADO</a>
     <br>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-4">
-        <a  class="btn btn-success btn-block" disabled="">CARGAR</a>
-        <br>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-4">
-        <a href="/articulos/reporte" class="btn btn-warning btn-block" disabled>REPORTES</a>
-        <br>
-    </div>
+    
 </div>
 
 <br>
@@ -51,7 +43,7 @@
             </div>
             <div class="col-lg-4 col-md-4">
                 <label for="precio_venta">Precio Venta</label>
-                <input type="text" class="form-control input-sm" onkeypress="return moneda(event)" name="precio_venta" id="precio_venta" tabindex="3">
+                <input type="number" class="form-control input-sm" onkeypress="return moneda(event)" name="precio_venta" id="precio_venta" tabindex="3">
             </div>
         </div>
 

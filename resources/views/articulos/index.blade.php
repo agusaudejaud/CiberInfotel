@@ -6,12 +6,9 @@
 <script type="text/javascript" src="{{ URL::asset('assets/js/funciones_articulos.js') }}"></script>
 
 <div class="container">
-    <p align="center" class="title-form">[ LISTADO DE ARTICULOS ]</p>
+
     
-    <div class="col-lg-4 col-md-4 col-sm-4">
-        <a href="/articulos" class="btn btn-primary btn-block">LISTADO</a>
-    <br>
-    </div>
+    
     <div class="col-lg-4 col-md-4 col-sm-4">
         <a href="articulos/create" class="btn btn-success btn-block">CARGAR</a>
         <br>
@@ -55,7 +52,7 @@
             <td class="text-center">
             {{$articulo->descripcion}}
             </td>
-            <td>
+            <td class="text-center">
                {!! Form::open(['method' => 'DELETE', 
                   'route' => ['articulos.destroy', $articulo->id]]) !!}
                   <button type="submit" class="btn btn-sm btn-danger col-sm pull-left"  >Eliminar</button>

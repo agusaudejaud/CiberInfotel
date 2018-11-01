@@ -5,13 +5,23 @@
 
 @section('content')
 <script type="text/javascript" src="{{ URL::asset('assets/js/funciones_proveedores.js') }}"></script>
+
+
+
 <div class="container">
-  <div class="col-lg-4 col-md-4 col-sm-4 text-center">
-    <a href="proveedores/create" class="btn btn-sm btn-success">NUEVO PROVEEDOR</a>
-  </div>
- 
-  
+
+    
+    
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        <a href="proveedores/create" class="btn btn-success btn-block">CARGAR</a>
+        <br>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        <a href="proveedores/reporte" class="btn btn-warning btn-block" disabled>REPORTES</a>
+        <br>
+    </div>
 </div>
+
 <br>
 
 
