@@ -19,15 +19,7 @@ class ArticuloController extends Controller
     public function index()
     {
         
-        $articulos = DB::select('SELECT 
-        articles.*,
-        IFNULL((SELECT 
-            SUM(detallepedidos.cantidad) 
-         FROM detallepedidos 
-         WHERE detallepedidos.articulo=articles.id),0) AS Stock,
-         marcas.nombre AS nombreMarca
-      FROM articles 
-      INNER JOIN marcas ON marcas.id = articles.marca');
+        $articulos=Articulo::listaArt();
 
         return view('articulos.index', compact('articulos'));
         
@@ -128,16 +120,9 @@ class ArticuloController extends Controller
     }
 
     public function crearPdf(){
-        $articulos = DB::select('SELECT 
-        articles.*,
-        IFNULL((SELECT 
-            SUM(detallepedidos.cantidad) 
-         FROM detallepedidos 
-         WHERE detallepedidos.articulo=articles.id),0) AS Stock,
-         marcas.nombre AS nombreMarca
-      FROM articles 
-      INNER JOIN marcas ON marcas.id = articles.marca');
-        $pdf =PDF::loadView('pdfart',compact('articulos'));
+      
+      $articulos=Articulo::listaArt();
+              $pdf =PDF::loadView('pdfart',compact('articulos'));
         return $pdf->download('Articulos.pdf');
     }
 }

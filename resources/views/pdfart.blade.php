@@ -17,17 +17,28 @@
             padding:5px;
             text-align:center;
         }
+        th{
+            background:black;
+            color: white;
+            text-align:center;
+        }
+        h2{
+            text-align:center;
+
+        }
     </style>
 </head>
 <body>
     <H2>Listado de Articulos</H2>
     <table>
         <thead>
+        <tr>
             <th>Nombre del articulo</th>
             <th>Marca</th>
             <th>Disponibilidad</th>
             <th>Precio venta</th>
             <th>Descripcion</th>
+            </tr>
         </thead>
     <tbody>
     @foreach ($articulos as $articulo)
