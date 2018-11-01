@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Articulo;
 use App\Marca;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ArticuloController extends Controller
 {
@@ -27,6 +28,7 @@ class ArticuloController extends Controller
          marcas.nombre AS nombreMarca
       FROM articles 
       INNER JOIN marcas ON marcas.id = articles.marca');
+
         return view('articulos.index', compact('articulos'));
         
     }
@@ -57,7 +59,7 @@ class ArticuloController extends Controller
         $articulo->marca= $request->input('marca');
         $articulo->descripcion= $request->input('descripcion');
         $articulo->precio_venta= $request->input('precio_venta');
-        // $articulo->codigo_barras= $request->input('codigo_barras');
+    
         $articulo->save();
 
         return redirect()->route('articulos.create');
@@ -124,4 +126,19 @@ class ArticuloController extends Controller
         $articulo->delete();
         return redirect()->route('articulos.index');
     }
+
+    public function crearPdf(){
+        $articulos = DB::select('SELECT 
+        articles.*,
+        IFNULL((SELECT 
+            SUM(detallepedidos.cantidad) 
+         FROM detallepedidos 
+         WHERE detallepedidos.articulo=articles.id),0) AS Stock,
+         marcas.nombre AS nombreMarca
+      FROM articles 
+      INNER JOIN marcas ON marcas.id = articles.marca');
+        $pdf =PDF::loadView('pdfart',compact('articulos'));
+        return $pdf->download('Articulos.pdf');
+    }
 }
+

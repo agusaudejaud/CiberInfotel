@@ -14,7 +14,7 @@
         <br>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4">
-        <a href="articulos/reporte" class="btn btn-warning btn-block" disabled>REPORTES</a>
+        <a href="pdfart" class="btn btn-warning btn-block">REPORTES</a>
         <br>
     </div>
 </div>

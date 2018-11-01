@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+
 
 //Route::resource('/articulos', 'ArticuloController');
 
@@ -40,11 +40,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/pedidos', 'PedidoController');
     Route::resource('/detallesped', 'DetallepedController');
     Route::get('detallesped/crearPedido/{id}', 'DetallepedController@crearPedido')->name('detallesped.crearPedido');
-
+    Route::get('pdfart', 'ArticuloController@crearPdf');
 });
 
+/*Route::get('pdf', function (){
+   
+    $pdf =PDF::loadView('pdf');
+    return $pdf->download('archivo.pdf');
+});*/
 
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+
